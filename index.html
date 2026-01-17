@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+
+    <style>
+        /* General Page Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container for content */
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px; /* Increased container width to fit the larger animation */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* This forces the Lottie file to center */
+        }
+
+        /* Lottie Animation Styling */
+        dotlottie-wc {
+            margin-top: -500px;
+            /* 1. Make it big */
+            width: 1000px !important;
+            height: 1000px !important;
+            
+            /* 2. Make it responsive (shrink on small screens) */
+            max-width: 140%;
+            max-height: 80vh; /* Don't take up more than 60% of vertical screen height */
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2rem;
+            margin-top: -100px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-top: 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 650px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <dotlottie-wc 
+            src="https://lottie.host/30a012fc-2f4a-4265-9355-863e3f4102ae/yeUU4oHJBq.lottie" 
+            autoplay 
+            loop>
+        </dotlottie-wc>
+
+        <h1>Under Construction</h1>
+    </div>
+
+</body>
+</html>
