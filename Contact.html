@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fynn | Contact</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#8b5cf6', // Violet-500
+                        accentHover: '#7c3aed', // Violet-600
+                        dark: '#0f0f11',
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f0f11;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Glowing background blobs */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            transition: transform 0.1s linear; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen">
+
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1 bg-purple-600 w-96 h-96 top-0 left-[-100px]"></div>
+    <div class="bg-blob blob-2 bg-blue-600 w-96 h-96 bottom-0 right-[-100px]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 px-6 py-6 flex justify-between items-center backdrop-blur-sm">
+        <a href="/" class="text-xl font-display font-bold tracking-tight hover:text-gray-300 transition-colors">
+            Fynn<span class="text-accent">.qzz.io</span>
+        </a>
+        <div class="flex gap-4">
+            <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+            <a href="/Projects" class="text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
+            <!-- Highlighted Contact because this is the Contact page -->
+            <a href="/Contact" class="text-sm text-white font-bold transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col justify-center items-center px-6 pt-24 pb-12">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-4">Get in <span class="text-accent">Touch</span></h1>
+            <p class="text-gray-400 max-w-lg mx-auto">
+                Whether you have a question, want to collaborate on a project, or just want to say hi, I'll try my best to get back to you!
+            </p>
+        </div>
+
+        <div class="grid gap-6 w-full max-w-lg">
+            
+            <!-- Email Card -->
+            <a href="mailto:contact@fynn.qzz.io" class="glass-card p-6 rounded-2xl flex items-center gap-6 group cursor-pointer">
+                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Email</h3>
+                    <p class="text-gray-400 text-sm group-hover:text-white transition-colors">contact@fynn.qzz.io</p>
+                </div>
+                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-accent"></i>
+                </div>
+            </a>
+
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/fynn-ob" target="_blank" class="glass-card p-6 rounded-2xl flex items-center gap-6 group cursor-pointer">
+                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">LinkedIn</h3>
+                    <p class="text-gray-400 text-sm group-hover:text-white transition-colors">Connect professionally</p>
+                </div>
+                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-[#0077b5]"></i>
+                </div>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/fynnob" target="_blank" class="glass-card p-6 rounded-2xl flex items-center gap-6 group cursor-pointer">
+                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">GitHub</h3>
+                    <p class="text-gray-400 text-sm group-hover:text-white transition-colors">Check out my code</p>
+                </div>
+                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-white"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="mt-12">
+            <a href="/" class="text-gray-500 hover:text-white text-sm flex items-center gap-2 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm">
+        <p>&copy; 2026 Fynn. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Background Blob Logic (Same as Home)
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const blob1 = document.querySelector('.blob-1');
+            const blob2 = document.querySelector('.blob-2');
+            
+            if(blob1) blob1.style.transform = `translateY(${scrollY * 0.4}px) rotate(${scrollY * 0.05}deg)`; 
+            if(blob2) blob2.style.transform = `translateY(-${scrollY * 0.2}px) translateX(-${scrollY * 0.1}px)`;
+        });
+    </script>
+</body>
+</html>
+
